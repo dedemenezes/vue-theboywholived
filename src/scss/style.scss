@@ -1,0 +1,34 @@
+$bg-color: #0a1828;
+
+$gryffindor-scarlet: #740001;
+$gryffindor-red: #ae0001;
+$gryffindor-gold: #d3bc8d;
+$gryffindor-yellow: #eeba30;
+$slytherin-dark-green: #1a472a;
+$slytherin-green: #2a623d;
+$slytherin-dark-silver: #5d5d5d;
+$slytherin-light-silver: #aaaaaa;
+$ravenclaw-dark-blue: #0c1a40;
+$ravenclaw-blue: #222f5b;
+$ravenclaw-grey: #bebebe;
+$ravenclaw-gold: #946b2d;
+$hufflepuff-canary: #eeb939;
+$hufflepuff-light-canary: #f0c75e;
+$hufflepuff-light-brown: #726255;
+$hufflepuff-dark-brown: #372e29;
+
+$body-bg: $bg-color;
+$body-color: white;
+$primary: $gryffindor-yellow;
+
+$navbar-dark-color: white;
+$navbar-dark-hover-color: rgba(white, 0.75);
+$navbar-dark-active-color: white;
+$navbar-dark-disabled-color: rgba(white, 0.25);
+$navbar-dark-icon-color: $navbar-dark-color;
+$navbar-dark-toggler-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-dark-icon-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+$navbar-dark-toggler-border-color: rgba(white, 0.1);
+$navbar-dark-brand-color: $navbar-dark-active-color;
+$navbar-dark-brand-hover-color: $navbar-dark-active-color;
+
+@import 'bootstrap/scss/bootstrap';
