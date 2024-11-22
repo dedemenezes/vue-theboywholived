@@ -1,7 +1,7 @@
 <script setup>
 import { onBeforeMount, ref } from 'vue'
 
-const baseUrl = 'https://theboywholived.com/api/v1/'
+const baseUrl = 'https://shielded-cliffs-65656-a314194ea4d1.herokuapp.com/api/v1/'
 const props = defineProps({
   msg: {
     type: String,
@@ -11,7 +11,7 @@ const path = ref(props.msg)
 
 const sendResquest = () => {
   // console.log(path.value)
-  fetch(`http://127.0.0.1:3000/api/v1/${path.value}`)
+  fetch(`${baseUrl}${path.value}`)
     .then((response) => response.json())
     .then((data) => {
       console.log(data)
