@@ -1,5 +1,4 @@
 <script setup>
-import jsonview from '@pgrabovets/json-view'
 import { onBeforeMount, ref } from 'vue'
 
 const baseUrl = 'https://theboywholived.com/api/v1/'
@@ -16,12 +15,14 @@ const sendResquest = () => {
     .then((response) => response.json())
     .then((data) => {
       console.log(data)
-      // create json tree object
-      const tree = jsonview.create(data)
-      // render tree into dom element
-      document.getElementById('response').innerText = ''
-      jsonview.render(tree, document.getElementById('response'))
-      jsonview.expand(tree)
+      new JsonViewer({
+        value: data,
+        displayDataTypes: false,
+        rootName: false,
+        indentWidth: 4,
+        enableClipboard: true,
+        defaultInspectDepth: 3,
+      }).render('.tree')
     })
 }
 onBeforeMount(() => {
