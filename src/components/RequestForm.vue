@@ -1,10 +1,17 @@
 <script setup>
 import jsonview from '@pgrabovets/json-view'
 import { onBeforeMount, ref } from 'vue'
+
 const baseUrl = 'https://theboywholived.com/api/v1/'
-const path = ref('/books/4')
+const props = defineProps({
+  msg: {
+    type: String,
+  },
+})
+const path = ref(props.msg)
+
 const sendResquest = () => {
-  console.log(path.value)
+  // console.log(path.value)
   fetch(`http://127.0.0.1:3000/api/v1/${path.value}`)
     .then((response) => response.json())
     .then((data) => {
