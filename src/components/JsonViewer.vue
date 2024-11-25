@@ -1,11 +1,11 @@
 <script setup>
-import { defineProps, onMounted } from 'vue'
+import { defineProps, onMounted, watch } from 'vue'
 
 const props = defineProps({
   value: Object,
 })
 
-onMounted(() => {
+const renderResponse = () => {
   new JsonViewer({
     value: props.value,
     displayDataTypes: false,
@@ -14,9 +14,20 @@ onMounted(() => {
     enableClipboard: true,
     defaultInspectDepth: 3,
   }).render('.tree')
+}
+
+watch(
+  () => props.value,
+  () => {
+    renderResponse()
+  },
+)
+
+onMounted(() => {
+  renderResponse()
 })
 </script>
 
 <template>
-  <pre class="response tree" id="response" data-request-target="pre"></pre>
+  <pre class="response tree" id="response"></pre>
 </template>

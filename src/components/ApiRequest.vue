@@ -6,7 +6,6 @@ import { ref } from 'vue'
 const responseData = ref(null)
 
 const handleUpdate = (data) => {
-  // console.log(data)
   responseData.value = data
 }
 </script>
