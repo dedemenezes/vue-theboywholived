@@ -21,8 +21,6 @@ const sendResquest = async () => {
 }
 
 const updatePath = (newPath) => {
-  console.log(newPath)
-
   path.value = newPath
   sendResquest()
 }
@@ -47,10 +45,10 @@ onMounted(() => {
       </div>
       <div class="form-text" id="basic-addon4">
         Need a hint?
-        <RequestSuggestion @update-path="updatePath" msg="/spells" />,
-        <RequestSuggestion @update-path="updatePath" msg="/characters/4" />,
+        <RequestSuggestion @update-path="updatePath" msg="/spells/155" />,
+        <RequestSuggestion @update-path="updatePath" msg="/characters/3" />,
         <RequestSuggestion @update-path="updatePath" msg="/species?page=2" />,
-        <RequestSuggestion @update-path="updatePath" msg="/wands/44" />,
+        <RequestSuggestion @update-path="updatePath" msg="/wands/1" />,
       </div>
     </form>
   </div>
