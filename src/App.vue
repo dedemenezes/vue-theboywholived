@@ -7,7 +7,7 @@ import ApiRequest from './components/ApiRequest.vue'
 <template>
   <NavBar />
   <HomeBanner />
-  <ApiRequest msg="/books/1" />
+  <ApiRequest />
 </template>
 
 <style>

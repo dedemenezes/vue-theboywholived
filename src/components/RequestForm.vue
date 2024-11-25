@@ -1,31 +1,26 @@
 <script setup>
-import { onBeforeMount, ref } from 'vue'
+import { onMounted, ref } from 'vue'
 
 const baseUrl = 'https://shielded-cliffs-65656-a314194ea4d1.herokuapp.com/api/v1/'
-const props = defineProps({
-  msg: {
-    type: String,
-  },
-})
-const path = ref(props.msg)
 
-const sendResquest = () => {
-  // console.log(path.value)
-  fetch(`${baseUrl}${path.value}`)
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data)
-      new JsonViewer({
-        value: data,
-        displayDataTypes: false,
-        rootName: false,
-        indentWidth: 4,
-        enableClipboard: true,
-        defaultInspectDepth: 3,
-      }).render('.tree')
-    })
+const cache = new Map()
+
+const path = ref('/books/1')
+
+const emits = defineEmits(['response'])
+const sendResquest = async () => {
+  if (!cache.has(path.value)) {
+    const response = await fetch(`${baseUrl}${path.value}`)
+    const data = await response.json()
+    cache.set(path.value, data)
+    emits('response', data)
+  } else {
+    console.log('CACHED:::', cache)
+    emits('response', cache.get(path.value))
+  }
 }
-onBeforeMount(() => {
+
+onMounted(() => {
   sendResquest()
 })
 </script>
@@ -33,7 +28,7 @@ onBeforeMount(() => {
   <div class="mb-3">
     <form @submit.prevent="sendResquest" action="#">
       <div class="input-group" data-bs-theme="dark">
-        <span class="input-group-text" id="basic-addon3">{{ baseUrl }}</span>
+        <span class="input-group-text" id="basic-addon3">base url</span>
         <input
           v-model="path"
           type="text"

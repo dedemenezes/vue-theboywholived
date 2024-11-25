@@ -1,16 +1,18 @@
 <script setup>
 import RequestForm from './RequestForm.vue'
-const props = defineProps({
-  msg: {
-    type: String,
-    required: true,
-  },
-})
-console.log(props.msg)
+import JsonViewer from './JsonViewer.vue'
+
+import { ref } from 'vue'
+const responseData = ref(null)
+
+const handleUpdate = (data) => {
+  // console.log(data)
+  responseData.value = data
+}
 </script>
 <template>
   <div class="container">
-    <RequestForm :msg="props.msg" />
-    <pre class="response tree" id="response" data-request-target="pre"></pre>
+    <RequestForm @response="handleUpdate" />
+    <JsonViewer v-if="responseData" :value="responseData" />
   </div>
 </template>
