@@ -15,7 +15,6 @@ const sendResquest = async () => {
     cache.set(path.value, data)
     emits('response', data)
   } else {
-    console.log('CACHED:::', cache)
     emits('response', cache.get(path.value))
   }
 }

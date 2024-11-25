@@ -3,7 +3,7 @@ import ButtonFlat from './ButtonFlat.vue'
 </script>
 
 <template>
-  <div class="banner text-primary text-center">
+  <div class="banner text-primary text-center" v-once>
     <div class="container">
       <h1>The Magical World of <br />Harry Potter<br />at Your Fingertips</h1>
       <p>
