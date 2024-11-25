@@ -6,11 +6,11 @@ const props = defineProps({
   },
 })
 
-const emit = defineEmits(['update-path'])
+const emit = defineEmits(['path-selected'])
 </script>
 
 <template>
-  <em @click="emit('update-path', props.msg)" :path="props.msg">{{ props.msg }}</em>
+  <em @click="emit('path-selected', props.msg)" :path="props.msg">{{ props.msg }}</em>
 </template>
 
 <style scoped>

@@ -6,7 +6,7 @@ const baseUrl = 'https://shielded-cliffs-65656-a314194ea4d1.herokuapp.com/api/v1
 
 const cache = new Map()
 
-const path = ref('/books/1')
+const path = ref('books/1')
 
 const emits = defineEmits(['response'])
 const sendResquest = async () => {
@@ -45,10 +45,10 @@ onMounted(() => {
       </div>
       <div class="form-text" id="basic-addon4">
         Need a hint?
-        <RequestSuggestion @update-path="updatePath" msg="/spells/155" />,
-        <RequestSuggestion @update-path="updatePath" msg="/characters/3" />,
-        <RequestSuggestion @update-path="updatePath" msg="/species?page=2" />,
-        <RequestSuggestion @update-path="updatePath" msg="/wands/1" />,
+        <RequestSuggestion @path-selected="updatePath" msg="spells/155" />,
+        <RequestSuggestion @path-selected="updatePath" msg="characters/3" />,
+        <RequestSuggestion @path-selected="updatePath" msg="species?page=2" />,
+        <RequestSuggestion @path-selected="updatePath" msg="wands/1" />,
       </div>
     </form>
   </div>

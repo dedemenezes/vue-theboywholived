@@ -1,6 +1,4 @@
-<script setup>
-import ButtonFlat from './ButtonFlat.vue'
-</script>
+<script setup></script>
 
 <template>
   <div class="banner text-primary text-center" v-once>
@@ -10,7 +8,6 @@ import ButtonFlat from './ButtonFlat.vue'
         Access comprehensive data about characters, spells, potions, and more from the wizarding
         world through our modern REST API.
       </p>
-      <ButtonFlat msg="Check the docs!" href="/documentation" />
     </div>
   </div>
 </template>

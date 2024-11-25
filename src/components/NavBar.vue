@@ -8,11 +8,16 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="#">Documentation</a>
-        </li>
+        </li> -->
         <li class="nav-item">
-          <a class="nav-link fs-4 link-primary" href="#"><i class="bi bi-github"></i></a>
+          <a
+            class="nav-link fs-4 link-primary"
+            href="https://github.com/dedemenezes/vue-theboywholived"
+            target="_blank"
+            ><i class="bi bi-github"></i
+          ></a>
         </li>
       </ul>
     </div>
