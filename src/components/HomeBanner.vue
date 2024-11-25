@@ -10,7 +10,7 @@ import ButtonFlat from './ButtonFlat.vue'
         Access comprehensive data about characters, spells, potions, and more from the wizarding
         world through our modern REST API.
       </p>
-      <ButtonFlat msg="Try it out!" />
+      <ButtonFlat msg="Check the docs!" href="/documentation" />
     </div>
   </div>
 </template>

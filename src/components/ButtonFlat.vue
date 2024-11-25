@@ -1,5 +1,5 @@
 <script setup>
-defineProps({
+const props = defineProps({
   msg: {
     type: String,
     required: true,
@@ -11,7 +11,7 @@ defineProps({
 })
 </script>
 <template>
-  <a class="btn btn-flat" href="{{ href }}">{{ msg }}</a>
+  <a class="btn btn-flat" :href="props.href">{{ msg }}</a>
 </template>
 <style scoped>
 .btn-flat {

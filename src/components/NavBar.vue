@@ -6,7 +6,7 @@
       <a class="navbar-brand text-primary fw-bold">TheBoyWhoLivedAPI</a>
       <ul class="navbar-nav flex-row gap-4 align-items-center">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Documentation</a>
