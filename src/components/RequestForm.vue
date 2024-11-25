@@ -1,5 +1,6 @@
 <script setup>
 import { onMounted, ref } from 'vue'
+import RequestSuggestion from './RequestSuggestion.vue'
 
 const baseUrl = 'https://shielded-cliffs-65656-a314194ea4d1.herokuapp.com/api/v1/'
 
@@ -17,6 +18,13 @@ const sendResquest = async () => {
   } else {
     emits('response', cache.get(path.value))
   }
+}
+
+const updatePath = (newPath) => {
+  console.log(newPath)
+
+  path.value = newPath
+  sendResquest()
 }
 
 onMounted(() => {
@@ -38,7 +46,11 @@ onMounted(() => {
         <button type="submit" class="btn btn-primary">Submit</button>
       </div>
       <div class="form-text" id="basic-addon4">
-        Need a hint? <em>books, /characters/4, /species?page=2, wands/44...</em>
+        Need a hint?
+        <RequestSuggestion @update-path="updatePath" msg="/spells" />,
+        <RequestSuggestion @update-path="updatePath" msg="/characters/4" />,
+        <RequestSuggestion @update-path="updatePath" msg="/species?page=2" />,
+        <RequestSuggestion @update-path="updatePath" msg="/wands/44" />,
       </div>
     </form>
   </div>
